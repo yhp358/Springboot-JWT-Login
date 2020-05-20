@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="store.yunqixinxi.com.mapper.CardTypeMapper">
+    <sql id="typeColumns">
+        a.id AS id,
+        a.type_name AS typeName,
+        a.open_type AS openType,
+        a.picture_url AS pictureUrl,
+        a.value_card AS valueCard,
+        a.min_amount AS minAmount,
+        a.integral_card AS integralCard,
+        a.integral_base AS integralBase,
+        a.integral_clear AS integralClear,
+        a.integral_clear_time AS integralClearTime,
+        a.discount_card AS discountCard,
+        a.discount_rate AS discountRate,
+        a.limit_card AS limitCard,
+        a.limit_times AS limitTimes,
+        a.vip_price AS vipPrice,
+        a.wechat_use AS wechatUse,
+        a.valid_time AS validTime,
+        a.time_unit AS timeUnit,
+        a.remark AS remark,
+        a.privilege AS privilege,
+        a.use_store_codes AS useStoreCodes,
+        a.operate_time AS operateTime,
+        a.operate_store_code AS operateStoreCode,
+        a.store_code AS storeCode,
+        a.yn AS yn
+    </sql>
+
+    <select id="findList" resultType="store.yunqixinxi.com.model.CardType">
+        SELECT
+        <include refid="typeColumns"/>
+        FROM card_type a
+        <where>
+            a.store_code=#{storeCode} AND FIND_IN_SET(#{operateStoreCode},a.use_store_codes) AND a.yn=0
+            <if test="typeName != null and typeName != ''">AND a.type_name LIKE concat('%',#{typeName},'%')</if>
+            <if test="openType != null">AND a.open_type=#{openType}</if>
+            <if test="valueCard != null">AND a.value_card=#{valueCard}</if>
+            <if test="vipPrice != null">AND a.vip_price=#{vipPrice}</if>
+        </where>
+        ORDER BY a.id DESC
+    </select>
+</mapper>

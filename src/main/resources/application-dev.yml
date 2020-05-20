@@ -1,0 +1,48 @@
+server:
+  port: 8080 #端口号
+#数据库配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/ycxx_crmdb?useUnicode=true&characterEncoding=utf-8&useBlobToStoreUTF8OutsideBMP=true&utf8OutsideBmpIncludedColumnNamePattern=content&useSSL=false&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+    password:
+#mapper配置
+mapper:
+  #当时只有通过 mappers 配置过的接口才能真正调用
+  mappers: store.yunqixinxi.com.basemapper.BaseMapper #通用基类的配置
+  identity: MYSQL #取回主键的方式，可以配置的值为数据库类型：
+  not-empty: false #insertSelective 和 updateByPrimaryKeySelective 中，是否判断字符串类型 !='' 。
+  before: false  #<selectkey> 中order 属性 可以为AFTER 或 before = false 用于插入数据后获取自增主键
+
+#mybatis配置
+mybatis:
+  type-aliases-package: store.yunqixinxi.com.model #实体类别名包
+  mapper-locations: classpath:/mapper/*Mapper.xml  #mapper.xml映射文件的包路径
+  configuration: #打印执行sql 到控制台
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+#pagehelper分页插件的配置
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+#日志级别
+logging:
+  level:
+    store.yunqixinxi.com.mapper: debug
+isTest: false
+auth:
+  noauth:
+      url: /swagger*/**,/**/api-docs*,/anon/**,/v1/wechat/card/**
+jwt:
+  secret: yunqixinxi=sdlkfhui
+  expiresTime: 1800
