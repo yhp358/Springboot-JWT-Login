@@ -9,7 +9,7 @@ import tk.mybatis.spring.annotation.MapperScan;
 //@EnableScheduling
 @EnableSwagger2
 @MapperScan(basePackages = "store.yunqixinxi.com.mapper")
-public class Application {
+public class Application {//入口启动类
     public static void main(String[] args) {
         SpringApplication.run(Application.class,args);
     }
