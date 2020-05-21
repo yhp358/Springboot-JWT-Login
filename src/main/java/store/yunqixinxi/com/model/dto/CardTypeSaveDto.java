@@ -1,4 +1,4 @@
-package store.yunqixinxi.com.model;
+package store.yunqixinxi.com.model.dto;
 
 import io.swagger.annotations.ApiModelProperty;
 import org.hibernate.validator.constraints.NotBlank;

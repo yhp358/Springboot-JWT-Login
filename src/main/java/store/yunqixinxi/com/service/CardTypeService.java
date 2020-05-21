@@ -4,9 +4,9 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import store.yunqixinxi.com.mapper.CardTypeMapper;
-import store.yunqixinxi.com.model.CardType;
-import store.yunqixinxi.com.model.CardTypeQueryDto;
-import store.yunqixinxi.com.model.CardTypeSaveDto;
+import store.yunqixinxi.com.model.entity.CardType;
+import store.yunqixinxi.com.model.dto.CardTypeQueryDto;
+import store.yunqixinxi.com.model.dto.CardTypeSaveDto;
 import tk.mybatis.mapper.entity.Example;
 
 import java.util.Date;

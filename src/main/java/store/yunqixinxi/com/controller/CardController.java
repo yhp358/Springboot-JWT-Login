@@ -8,12 +8,11 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import store.yunqixinxi.com.common.ControllerBase;
-import store.yunqixinxi.com.model.CardType;
-import store.yunqixinxi.com.model.CardTypeQueryDto;
-import store.yunqixinxi.com.model.CardTypeSaveDto;
+import store.yunqixinxi.com.model.entity.CardType;
+import store.yunqixinxi.com.model.dto.CardTypeQueryDto;
+import store.yunqixinxi.com.model.dto.CardTypeSaveDto;
 import store.yunqixinxi.com.service.CardTypeService;
 
 import javax.validation.Valid;
