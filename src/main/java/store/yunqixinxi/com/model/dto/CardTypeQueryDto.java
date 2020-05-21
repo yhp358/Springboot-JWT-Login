@@ -1,4 +1,4 @@
-package store.yunqixinxi.com.model;
+package store.yunqixinxi.com.model.dto;
 
 import io.swagger.annotations.ApiModelProperty;
 import store.yunqixinxi.com.common.PageDto;

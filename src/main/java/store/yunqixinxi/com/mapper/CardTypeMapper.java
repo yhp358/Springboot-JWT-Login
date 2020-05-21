@@ -2,8 +2,8 @@ package store.yunqixinxi.com.mapper;
 
 import org.springframework.stereotype.Repository;
 import store.yunqixinxi.com.basemapper.BaseMapper;
-import store.yunqixinxi.com.model.CardType;
-import store.yunqixinxi.com.model.CardTypeQueryDto;
+import store.yunqixinxi.com.model.entity.CardType;
+import store.yunqixinxi.com.model.dto.CardTypeQueryDto;
 
 import java.util.List;
 

@@ -29,7 +29,7 @@
         a.yn AS yn
     </sql>
 
-    <select id="findList" resultType="store.yunqixinxi.com.model.CardType">
+    <select id="findList" resultType="store.yunqixinxi.com.model.entity.CardType">
         SELECT
         <include refid="typeColumns"/>
         FROM card_type a

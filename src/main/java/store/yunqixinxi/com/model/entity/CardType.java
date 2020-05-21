@@ -1,4 +1,4 @@
-    package store.yunqixinxi.com.model;
+    package store.yunqixinxi.com.model.entity;
 
     import com.fasterxml.jackson.annotation.JsonFormat;
     import io.swagger.annotations.ApiModelProperty;
